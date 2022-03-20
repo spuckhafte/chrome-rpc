@@ -17,5 +17,6 @@
 1. Download the project
 2. Set up the extension in chrome (`extension directory`)
 3. Navigate to `rich-presence` directory in cmd
-4. `node server`<br>
+4. `node server`
+###
 **You are all good, It would work**
