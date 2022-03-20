@@ -1,16 +1,16 @@
 # chrome-rpc
 **Discord Rich Presence for Chrome**
 ## Sites:
-1. Google.com
-2. Youtube.com
-3. Stackoverflow.com (w3s, geeksforgeeks, quora, codepen)
-4. Github.com
-5. Reddit.com
-6. Twitter.com
-7. Discord.gg(com)
+1. Google
+2. Youtube
+3. Stackoverflow (w3schools, geeksforgeeks, quora, codepen)
+4. Github
+5. Reddit
+6. Twitter
+7. Discord
 8. Facebook
-9. Instagram.com
-10. Wikipedia.org
+9. Instagram
+10. Wikipedia
 *etc*
 
 ## How to setup:
