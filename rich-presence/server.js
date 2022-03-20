@@ -15,7 +15,7 @@ wss.on('connection', socket => {
             RPC.login({ clientId }).catch(err => console.error(err));
         } else {
             data = typeof data === 'string' ? JSON.parse(data) : data;
-            if (data.url.length <= 512) data.url = data.url.slice(0, 512);
+            if (data.url.length >= 512) data.url = data.url.slice(0, 512);
             if (data.url.includes('youtube.com')) {
                 if (data.url.includes('watch?')) {
                     RPC.removeAllListeners();
@@ -68,7 +68,7 @@ wss.on('connection', socket => {
                     setActivity('tweeting', data.title, data.url, 'Tweet', 'twitter');
                 });
                 RPC.login({ clientId }).catch(err => console.error(err));
-            } else if (data.url.includes('discord')) {
+            } else if (data.url.includes('discord.gg') || data.url.includes('discord.com')) {
                 RPC.removeAllListeners();
                 RPC.on('ready', async () => {
                     setActivity('discord', data.title, data.url, 'Search', 'discord');
@@ -92,6 +92,12 @@ wss.on('connection', socket => {
                     setActivity('instagram', data.title, data.url, 'Go', 'instagram');
                 });
                 RPC.login({ clientId }).catch(err => console.error(err));
+            } else if (data.url.includes('wikipedia.org')) {
+                RPC.removeAllListeners();
+                RPC.on('ready', async () => {
+                    setActivity('reading', data.title, data.url, 'Read', 'wiki');
+                });
+                RPC.login({ clientId }).catch(err => console.error(err));
             } else {
                 if (data.url.includes('aot') || data.url.includes('attackontitan') || data.url.includes('attack-on-titan') || data.url.includes('shingeki-no-kyojin')) {
                     RPC.removeAllListeners();
@@ -105,14 +111,7 @@ wss.on('connection', socket => {
                         setActivity('editing', data.title, 'https://github.com/spuckhafte?tab=repositories', 'Repos', 'code');
                     });
                     RPC.login({ clientId }).catch(err => console.error(err));
-                } else if (data.url.includes('wikipedia')) {
-                    RPC.removeAllListeners();
-                    RPC.on('ready', async () => {
-                        setActivity('reading', data.title, data.url, 'Read', 'wiki');
-                    });
-                    RPC.login({ clientId }).catch(err => console.error(err));
-                }
-                else {
+                } else {
                     RPC.removeAllListeners();
                     RPC.on('ready', async () => {
                         setActivity('unreachable site', 'Somewhere in Chrome', 'https://bit.ly/3CSPJO2', 'None', 'chrome');
