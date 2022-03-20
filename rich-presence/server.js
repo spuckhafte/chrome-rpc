@@ -8,13 +8,8 @@ DiscordRPC.register(clientId);
 try {
     wss.on('connection', socket => {
         socket.onmessage = async ({ data }) => {
-            if (data === 'No tab') {
-                RPC.removeAllListeners();
-                RPC.on('ready', async () => {
-                    setActivity('no chrome', 'Out of Chrome', 'https://bit.ly/3CSPJO2', 'None', 'nochrome');
-                });
-                RPC.login({ clientId }).catch(err => console.error(err));
-            } else {
+            if (data === 'No tab') return
+            else {
                 data = typeof data === 'string' ? JSON.parse(data) : data;
                 if (data.url.length >= 512) data.url = data.url.slice(0, 512);
                 if (data.url.includes('youtube.com')) {
