@@ -23,9 +23,9 @@
 **You are all good, It would work**
 
 ## settings.json
-allSites[] -> list of all default sites
-bannedSites[] -> default sites you don't wanna show
-extraSites[] -> some sites other than default ones you wanna show
-githubUsername -> your username in github (by default of creator)
-workingRepo -> if any, by default leads to all of your repos. (eg: "/my-project")
-noUrl -> a url for some cases (when site is not defined)
+allSites[] -> list of all default sites<br>
+bannedSites[] -> default sites you don't wanna show<br>
+extraSites[] -> some sites other than default ones you wanna show<br>
+githubUsername -> your username in github (by default of creator)<br>
+workingRepo -> if any, by default leads to all of your repos. (eg: "/my-project")<br>
+noUrl -> a url for some cases (when site is not defined)<br>
