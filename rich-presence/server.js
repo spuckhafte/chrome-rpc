@@ -30,6 +30,7 @@ try {
             } else {
                 data = typeof data === 'string' ? JSON.parse(data) : data;
                 if (data.url.length >= 512) data.url = data.url.slice(0, 512);
+                if (data.title.length >= 128) data.title = data.title.slice(0, 128);
                 if (data.url.includes('youtube.com') && !bannedSites.includes('youtube.com')) {
                     if (data.url.includes('watch?')) {
                         RPC.removeAllListeners();
